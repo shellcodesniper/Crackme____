@@ -7,16 +7,18 @@
 int main(int argc, char **argv) {
 	char input[30];
 	char password[30] = "password";
+	int i;
+
 	printf("Input Password : ");
 	scanf("%s",input);
-	if(input == password)
-	{
-		printf("Success!\n");
+
+	for(i=0;i<30;i++){
+		if(input[i] != '\0' && password[i] != '\0' && input[i] != password[i]){
+			printf("EEEEERRROOOROORRORORRR..\n");
+			return 0;
+		}
 	}
-	else
-	{
-		printf("EEEEERRROOOROORRORORRR..\n");
-	}
+	printf("Success!\n");
 	return 0;
 
 
